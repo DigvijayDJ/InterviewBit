@@ -20,3 +20,31 @@ public class Solution {
     return (char)(i + 'A' - 1);                 // it gives sum value of rem + 'A' -1 and convert it to char according to ascii.
     }
 }
+
+
+//--------------------  currect code with stringbuilder  --------------//
+public class Solution {
+    public String convertToTitle(int A) {
+        String S = "";
+        int val = 0;
+        while(A>0){
+            val = A%26;
+            if(val == 0){
+                val = 26;
+                A -= 26;
+            }
+            //char ch = (char)(val-'A'+1);
+            S += numToAlpha(val);
+            A= A/26;
+        }
+        StringBuilder input1 = new StringBuilder();
+        input1.append(S);
+        
+        //reverse(S.begin(), S.end());
+        //return S;
+        return input1.reverse().toString();
+    }
+    public char numToAlpha(int i) {
+    return (char)(i + 'A' - 1);
+    }
+}
