@@ -1,0 +1,17 @@
+public class Solution {
+    public int isPalindrome(int A) {
+        int x = A;
+        int res = 0;
+        while(A>0){
+            int rem = A%10;
+            res = res*10+rem;
+            A /= 10;
+        }
+        
+        if(res == x){
+            return 1;
+        }
+        else 
+        { return 0; }
+    }
+}
