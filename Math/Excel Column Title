@@ -1,0 +1,22 @@
+public class Solution {
+    public String convertToTitle(int A) {
+        String S = "";
+        int val = 0;
+        while(A>0){
+            val = A%26;
+            if(val == 0){                      // if remainder comes out to be 0, then 'Z', should be the case
+                val = 26;                      
+                A -= 26;                       // Value of A should be subtracted by 26; 
+            }
+            //char ch = (char)(val-'A'+1);     
+            S += numToAlpha(val);
+            A= A/26;
+        }
+        //S = S.reverse();
+        //reverse(S.begin(), S.end());
+        return S.reverse();
+    }
+    public char numToAlpha(int i) {
+    return (char)(i + 'A' - 1);                 // it gives sum value of rem + 'A' -1 and convert it to char according to ascii.
+    }
+}
